@@ -157,6 +157,11 @@ main div > h5 {
     font-size: 20px;
 }
 
+main div > h4 {
+    color: dimgray;
+    margin: 1rem;
+}
+
 main div > p {
     color: dimgray;
     margin: 0.5rem;

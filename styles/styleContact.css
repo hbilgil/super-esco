@@ -130,7 +130,7 @@ section {
 }
 
 nav {
-    width: 22%;
+    width: 20%;
     margin-top: 10px;
     height: auto;
 }
@@ -170,7 +170,7 @@ nav li i {
 
 main {
     height: auto;
-    width: 78%;
+    width: 80%;
     padding: 0.5rem;
     gap: 1rem;
 }
@@ -199,6 +199,7 @@ main div {
 
 .address > h2 {
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 .address p {
@@ -210,6 +211,30 @@ main div {
 .address i {
     cursor: default;
     margin-right: 10px;
+}
+
+.esco {
+    height: auto;
+    padding: 10px;
+    border: 0.5px solid rgba(20, 23, 28, .15);
+}
+
+.esco > h2 {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.esco > h3 {
+    margin-bottom: 10px;
+    color: crimson;
+}
+
+.esco > p {
+    font-family:Verdana;
+    font-size: .8rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 /*footer Style rules*/
