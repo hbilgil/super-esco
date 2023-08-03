@@ -125,17 +125,57 @@ section {
     border-top-right-radius: 10px;
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
     margin-top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+nav {
+    width: 27%;
+    margin-top: 10px;
+    height: auto;
+}
+
+nav ul {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #b4b4b4;
+    padding-left: 20px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+nav li a:hover {
+    color: white;
+    background-color: #adadad;
+}
+
+nav li i {
+    margin-right: 10px;
 }
 
 /*main Style rules for Homepage*/
 
 main {
     height: auto;
+    width: 73%;
     padding: 0.5rem;
     gap: 1rem;
 }
 
-main div {
+.super-e {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -143,21 +183,20 @@ main div {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
 }
 
-main div > img {
-    width: 100%;
-    /*height: 60%;*/
+.super-e-yazi {
     height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /*box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);*/
 }
 
-main div > h5 {
+.super-e-yazi > h5 {
     color: dimgray;
     margin: 1rem;
     font-size: 20px;
 }
 
-main div > p {
+.super-e-yazi > p {
     color: dimgray;
     margin: 0.5rem;
     margin-left: 1rem;
@@ -165,7 +204,53 @@ main div > p {
     line-height: 1.4;
 }
 
-main div > a:link {
+.super-e-sub-secs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.super-e-sub-secs div {
+    width: 48%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    margin-bottom: 15px;
+}
+
+.super-e-sub-secs div > img {
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: opacity 0.8s;
+}
+
+.super-e-sub-secs div > img:hover {
+    opacity: 0.7;
+}
+
+.super-e-sub-secs div > h5 {
+    color: dimgray;
+    margin: 1rem;
+    font-size: 16px;
+}
+
+.super-e-sub-secs div > p {
+    color: dimgray;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    font-size: 12px;
+}
+
+.super-e-sub-secs div > a:link {
     width: 9rem;
     height: 2.2rem;
     display: block;
@@ -178,19 +263,15 @@ main div > a:link {
     transition: opacity 0.5s;
 }
 
-main div > a:visited {
+.super-e-sub-secs div > a:visited {
     color: white;
 }
 
-main div > a:active {
+.super-e-sub-secs div > a:active {
     color: white;
 }
 
-main div > a:hover {
-    opacity: 0.8;
-}
-
-main div > a:hover {
+.super-e-sub-secs div > a:hover {
     opacity: 0.8;
 }
 
