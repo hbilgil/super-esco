@@ -176,7 +176,7 @@ main {
     gap: 1rem;
 }
 
-main div {
+.kaynak {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -184,22 +184,13 @@ main div {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
 }
 
-
-main div > img {
-    width: 100%;
-    /*height: 60%;*/
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-main div > h5 {
+.kaynak > h5 {
     color: dimgray;
     margin: 1rem;
     font-size: 20px;
 }
 
-main div > p {
+.kaynak > p {
     color: dimgray;
     margin: 0.5rem;
     margin-left: 1rem;
@@ -207,7 +198,93 @@ main div > p {
     line-height: 1.4;
 }
 
-main div > a:link {
+.enerji-v,
+.super-e {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+}
+
+.enerji-v-yazi,
+.super-e-yazi {
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);*/
+}
+
+.enerji-v-yazi > h5,
+.super-e-yazi > h5 {
+    color: dimgray;
+    margin: 1rem;
+    font-size: 20px;
+}
+
+.enerji-v-yazi > p,
+.super-e-yazi > p {
+    color: dimgray;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.enerji-v-sub-secs,
+.super-e-sub-secs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.enerji-v-sub-secs div,
+.super-e-sub-secs div {
+    width: 48%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    margin-bottom: 15px;
+}
+
+.enerji-v-sub-secs div > img,
+.super-e-sub-secs div > img {
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: opacity 0.8s;
+}
+
+.enerji-v-sub-secs div > img:hover,
+.super-e-sub-secs div > img:hover {
+    opacity: 0.7;
+}
+
+.enerji-v-sub-secs div > h5,
+.super-e-sub-secs div > h5 {
+    color: dimgray;
+    margin: 1rem;
+    font-size: 16px;
+}
+
+.enerji-v-sub-secs div > p,
+.super-e-sub-secs div > p {
+    color: dimgray;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    font-size: 12px;
+}
+
+.enerji-v-sub-secs div > a:link,
+.super-e-sub-secs div > a:link {
     width: 9rem;
     height: 2.2rem;
     display: block;
@@ -220,19 +297,18 @@ main div > a:link {
     transition: opacity 0.5s;
 }
 
-main div > a:visited {
+.enerji-v-sub-secs div > a:visited,
+.super-e-sub-secs div > a:visited {
     color: white;
 }
 
-main div > a:active {
+.enerji-v-sub-secs div > a:active,
+.super-e-sub-secs div > a:active {
     color: white;
 }
 
-main div > a:hover {
-    opacity: 0.8;
-}
-
-main div > a:hover {
+.enerji-v-sub-secs div > a:hover,
+.super-e-sub-secs div > a:hover {
     opacity: 0.8;
 }
 
