@@ -400,6 +400,7 @@ tr:nth-child(odd) td {
     margin-bottom: 15px;
 }
 
+.enerji-v-sub-secs div > .image > img,
 .enerji-v-sub-secs div > img,
 .super-e-sub-secs div > img {
     width: 100%;
@@ -410,6 +411,7 @@ tr:nth-child(odd) td {
     opacity: 0.7;
 }
 
+.enerji-v-sub-secs div:hover > .image > img,
 .enerji-v-sub-secs div:hover > img,
 .super-e-sub-secs div:hover > img {
     opacity: 1;
@@ -432,8 +434,8 @@ tr:nth-child(odd) td {
     font-size: 14px;
 }
 
-.enerji-v-sub-secs div > a:link,
-.super-e-sub-secs div > a:link {
+.enerji-v-sub-secs div > .button:link,
+.super-e-sub-secs div > .button:link {
     width: 9rem;
     height: 2.2rem;
     display: block;
@@ -446,18 +448,18 @@ tr:nth-child(odd) td {
     transition: opacity 0.5s;
 }
 
-.enerji-v-sub-secs div > a:visited,
-.super-e-sub-secs div > a:visited {
+.enerji-v-sub-secs div > .button:visited,
+.super-e-sub-secs div > .button:visited {
     color: white;
 }
 
-.enerji-v-sub-secs div > a:active,
-.super-e-sub-secs div > a:active {
+.enerji-v-sub-secs div > .button:active,
+.super-e-sub-secs div > .button:active {
     color: white;
 }
 
-.enerji-v-sub-secs div > a:hover,
-.super-e-sub-secs div > a:hover {
+.enerji-v-sub-secs div > .button:hover,
+.super-e-sub-secs div > .button:hover {
     opacity: 0.8;
 }
 
