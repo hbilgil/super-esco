@@ -32,7 +32,7 @@ body {
     letter-spacing: 0.15rem;
 }
 
-span {
+p span {
     font-size: 0.8rem;
     letter-spacing: 0.08rem;
 }
@@ -40,6 +40,10 @@ span {
 .icons {
     display: flex;
     gap: 1rem;
+}
+
+.icons a {
+    color: white;
 }
 
 i {
@@ -78,7 +82,7 @@ header {
 
 header img {
     width: 70%;
-    height: 70%;
+    height: 75%;
     margin-top: 10px;
 }
 
@@ -86,10 +90,9 @@ header ul {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /*background-color:deepskyblue;*/
     background-color: #2cb8f0;
     width: 100%;
-    height: 100%;
+    height: 30%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -99,19 +102,26 @@ header ul li {
     text-decoration: none;
 }
 
-header ul li a {
-    text-decoration: none;
-    font-size: 20px;
+.header-btn {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
     color: white;
-    display: block;
+    font-size: 20px;
+    font-family: 'Teko', sans-serif;
 }
 
-header ul li a:hover {
+.header-btn.active {
+    color: black;
+}
+
+.header-btn:hover {
     color: black;
     transition: all 0.8s;
 }
 
-header ul li i {
+.header-btn i {
     margin-right: 10px;
 }
 
@@ -129,13 +139,17 @@ section {
 
 /*main Style rules for Homepage*/
 
-main {
+.home-main {
     height: auto;
     padding: 0.5rem;
     gap: 1rem;
 }
 
-main div {
+.home-main.passive {
+    display: none;
+}
+
+.haber {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -143,7 +157,7 @@ main div {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
 }
 
-main div > img {
+.haber > img {
     width: 100%;
     /*height: 60%;*/
     height: auto;
@@ -151,18 +165,14 @@ main div > img {
     border-top-right-radius: 10px;
 }
 
-main div > h5 {
+.haber > h5 {
     color: dimgray;
     margin: 1rem;
     font-size: 20px;
 }
 
-main div > h4 {
-    color: dimgray;
-    margin: 1rem;
-}
-
-main div > p {
+.uzun-haber > p,
+.haber > p {
     color: dimgray;
     margin: 0.5rem;
     margin-left: 1rem;
@@ -170,7 +180,575 @@ main div > p {
     line-height: 1.4;
 }
 
-main div > a:link {
+.uzun-haber > h4 {
+    color: dimgray;
+    margin: 1rem;
+}
+
+.haber > button {
+    width: 9rem;
+    height: 2.2rem;
+    padding: 10px 20px;
+    background-color: #2cb8f0;
+    color: white;
+    border-radius: 5px;
+    margin: 1rem;
+    transition: opacity 0.5s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.haber > button:hover {
+    opacity: 0.8;
+}
+
+/*main style rules for goals page*/
+
+.goals-main {
+    display: flex;
+    gap: 5px;
+}
+
+.goals-main.passive {
+    display: none;
+}
+
+.goals-main-nav {
+    width: 20%;
+    margin-top: 10px;
+    height: auto;
+}
+
+.goals-main-nav ul {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.goals-main-nav li {
+    list-style: none;
+}
+
+.goals-main-nav-btn {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-bottom: 1px solid #b4b4b4;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.goals-main-nav-btn.active {
+    color: white;
+    background-color: #adadad;
+    font-weight: bold;
+}
+
+.goals-main-nav-btn:hover {
+    color: white;
+    background-color: #adadad;
+}
+
+.goals-main-nav-btn i {
+    margin-right: 10px;
+}
+
+.goals-main main {
+    height: auto;
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.goals {
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+}
+
+.goals.passive {
+    display: none;
+}
+
+.goals-yazi {
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);*/
+    padding: 20px;
+}
+
+.goals-yazi > h5 {
+    color: dimgray;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.goals-yazi > p {
+    color: dimgray;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.normal {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    float: left;
+}
+
+.white {
+    background-color: white;
+    width: 40%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.ozel {
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.gallery-card-1 {
+    width: 60%;
+    height: auto;
+    float: left;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-3 {
+    width: 50%;
+    height: auto;
+    float: left;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-1 > img,
+.gallery-card-3 > img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.8;
+    transition: all 0.7s;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.gallery-card-1:hover > img,
+.gallery-card-3:hover > img {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-1 > p,
+.gallery-card-3 > p {
+    color: black;
+    font-size: 16px;
+}
+
+.gallery-card-1:hover > p,
+.gallery-card-3:hover > p {
+    color: crimson;
+}
+
+.gallery-card-2 {
+    width: 40%;
+    height: auto;
+    float: right;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-4 {
+    width: 50%;
+    height: auto;
+    float: right;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-2 > img,
+.gallery-card-4 > img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.8;
+    transition: all 0.7s;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.gallery-card-2:hover > img,
+.gallery-card-4:hover > img {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-2 > p,
+.gallery-card-4 > p {
+    color: black;
+    font-size: 16px;
+}
+
+.gallery-card-2:hover > p,
+.gallery-card-4:hover > p {
+    color: crimson;
+}
+
+/*main style rules for phases page*/
+
+.phases-main {
+    display: flex;
+    gap: 5px;
+}
+
+.phases-main.passive {
+    display: none;
+}
+
+.phases-main-nav {
+    width: 27%;
+    margin-top: 10px;
+    height: auto;
+}
+
+.phases-main-nav ul {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.phases-main-nav li {
+    list-style: none;
+}
+
+.phases-main-nav-btn {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-bottom: 1px solid #b4b4b4;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.phases-main-nav-btn.active {
+    color: white;
+    background-color: #adadad;
+    font-weight: bold;
+}
+
+.phases-main-nav-btn:hover {
+    color: white;
+    background-color: #adadad;
+}
+
+.phases-main-nav-btn i {
+    margin-right: 10px;
+}
+
+.phases-main main {
+    height: auto;
+    width: 73%;
+    padding: 0.5rem;
+}
+
+.surec {
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    padding: 20px;
+}
+
+.surec.passive {
+    display: none;
+}
+
+.surec > h1 {
+    color: dimgray;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.surec > p {
+    color: dimgray;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.kaynak {
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    padding: 20px;
+}
+
+.kaynak.passive {
+    display: none;
+}
+
+.kaynak > img {
+    width: 50%;
+    height: auto;
+    float: left;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.kaynak > h5 {
+    color: dimgray;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.kaynak > p {
+    color: dimgray;
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.enerji-v,
+.super-e {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+}
+
+.enerji-v.passive,
+.super-e.passive {
+    display: none;
+}
+
+.enerji-v-yazi,
+.super-e-yazi {
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);*/
+    padding: 20px;
+}
+
+.enerji-v-yazi > h5,
+.super-e-yazi > h5 {
+    color: dimgray;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.enerji-v-yazi > p,
+.super-e-yazi > p {
+    color: dimgray;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+table {
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    border: 1.5px solid rgb(200,200,200);
+}
+  
+td, th {
+    border: 1px solid rgb(190,190,190);
+    padding: 10px 20px;
+}
+
+td {
+    font-size: 0.8rem;
+}
+
+th {
+    background-color: rgb(9, 9, 9);
+    color: white;
+}
+  
+tr:nth-child(even) td {
+    background-color: rgb(250,250,250);
+}
+  
+tr:nth-child(odd) td {
+    background-color: rgb(245,245,245);
+}
+
+.gallery-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 964px;
+    position: relative;
+    margin-top: 20px;
+}
+  
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+  
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+  
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+  
+#prev {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+  
+#next {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+  
+#content {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+  
+.item {
+    width: 180px;
+    height: 180px;
+    background: green;
+}
+
+.enerji-v-sub-secs,
+.super-e-sub-secs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.enerji-v-sub-secs div,
+.super-e-sub-secs div {
+    width: 48%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    margin-bottom: 15px;
+}
+
+.enerji-v-sub-secs div > .image > img,
+.enerji-v-sub-secs div > img,
+.super-e-sub-secs div > .image > img,
+.super-e-sub-secs div > img {
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: opacity 0.8s;
+    opacity: 0.7;
+}
+
+.enerji-v-sub-secs div:hover > .image > img,
+.enerji-v-sub-secs div:hover > img,
+.super-e-sub-secs div:hover > .image > img,
+.super-e-sub-secs div:hover > img {
+    opacity: 1;
+}
+
+.enerji-v-sub-secs div > h5,
+.super-e-sub-secs div > h5 {
+    color: dimgray;
+    margin: 1rem;
+    font-size: 18px;
+}
+
+.enerji-v-sub-secs div > p,
+.super-e-sub-secs div > p {
+    color: dimgray;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    font-size: 14px;
+}
+
+/*.enerji-v-sub-secs div > .button:link,
+.super-e-sub-secs div > .button:link {
     width: 9rem;
     height: 2.2rem;
     display: block;
@@ -183,19 +761,300 @@ main div > a:link {
     transition: opacity 0.5s;
 }
 
-main div > a:visited {
+.enerji-v-sub-secs div > .button:visited,
+.super-e-sub-secs div > .button:visited {
     color: white;
 }
 
-main div > a:active {
+.enerji-v-sub-secs div > .button:active,
+.super-e-sub-secs div > .button:active {
     color: white;
 }
 
-main div > a:hover {
+.enerji-v-sub-secs div > .button:hover,
+.super-e-sub-secs div > .button:hover {
     opacity: 0.8;
+}*/
+
+em {
+    color: crimson;
 }
 
-main div > a:hover {
+.gallery-card-5 {
+    width: 60%;
+    height: auto;
+    float: left;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-5 > img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.8;
+    transition: all 0.7s;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.gallery-card-5:hover > img {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-5 > p {
+    color: black;
+    font-size: 20px;
+}
+
+.gallery-card-5:hover > p {
+    color: crimson;
+}
+
+.gallery-card-6 {
+    width: 40%;
+    height: 160px;
+    float: left;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.gallery-card-6 > img {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    opacity: 0.6;
+    transition: all 0.8s;
+    object-fit: cover;
+}
+    
+.gallery-card-6 > img:hover {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-7 {
+    width: 45%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 20px;
+}
+
+.gallery-card-7 > img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    opacity: 0.6;
+    transition: all 0.8s;
+    object-fit: cover;
+}
+    
+.gallery-card-7 > img:hover {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-8 {
+    width: 50%;
+    height: auto;
+    float: right;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.gallery-card-8 > img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.8;
+    transition: all 0.7s;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.gallery-card-8:hover > img {
+    opacity: 1;
+    transform: scale(0.97);
+}
+
+.gallery-card-8 > p {
+    color: black;
+    font-size: 16px;
+}
+
+.gallery-card-8:hover > p {
+    color: crimson;
+}
+
+/*main style rules for contact page*/
+
+.contact-main {
+    display: flex;
+    gap: 5px;
+}
+
+.contact-main.passive {
+    display: none;
+}
+
+.contact-main-nav {
+    width: 20%;
+    margin-top: 10px;
+    height: auto;
+}
+
+.contact-main-nav ul {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-main-nav li {
+    list-style: none;
+}
+
+.contact-main-nav-btn {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-bottom: 1px solid #b4b4b4;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.contact-main-nav-btn.active {
+    color: white;
+    background-color: #adadad;
+    font-weight: bold;
+}
+
+.contact-main-nav-btn:hover {
+    color: white;
+    background-color: #adadad;
+}
+
+.contact-main-nav-btn i {
+    margin-right: 10px;
+}
+
+.contact-main main {
+    height: auto;
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.address-sec,
+.esco-sec {
+    height: auto;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    border-radius: 10px;
+}
+
+.address-sec.passive,
+.esco-sec.passive {
+    display: none;
+}
+
+.address {
+    height: auto;
+    padding: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 22rem;
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.address > h2 {
+    color: dimgray;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.address p {
+    color: dimgray;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.address i {
+    cursor: default;
+    margin-right: 10px;
+}
+
+.esco {
+    height: auto;
+    padding: 10px;
+}
+
+.esco > h2 {
+    color: dimgray;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.esco > h3 {
+    margin-bottom: 10px;
+    color: crimson;
+}
+
+.esco > p {
+    color: dimgray;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.button:link {
+    width: 9rem;
+    height: 2.2rem;
+    display: block;
+    padding: 10px 20px;
+    background-color: #2cb8f0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: opacity 0.5s;
+    text-align: center;
+}
+
+.button:visited {
+    color: white;
+}
+
+.button:active {
+    color: white;
+}
+
+.button:hover {
     opacity: 0.8;
 }
 
@@ -218,11 +1077,78 @@ footer img {
 
 .link {
     text-decoration: none;
+    color: black;
 }
+
+.link:visited {
+    color: black;
+}
+
+.link:hover {
+    color: crimson;
+}
+
+
+/*----HIDDEN SECTIONS----*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+.uzun-haber {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 80px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+  
+.close:hover,
+.close:focus {
+    color: crimson;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 /*Media query section for responsive design*/
 
-@media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 1330px) {
+    .phases-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 0.7rem;
+    }
+
+}
+
+@media only screen and (max-width: 1060px) {
+    .phases-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
     header {
         height: 250px;
     }
@@ -231,17 +1157,98 @@ footer img {
         height: 250px;
     }
 
-    header ul li a {
+    .header-btn {
         font-size: 18px;
     }
     
-    header ul li i {
+    .header-btn i {
         margin-right: 8px;
+    }
+
+    .goals-main-nav-btn {
+        font-size: 0.7rem;
+    }
+
+    .ozel {
+        margin-left: 100px;
+        margin-right: 100px;
+        text-align: center;
+        line-height: 1.5;
+        font-size: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 930px) {
+    .phases-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 0.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    header {
+        height: 225px;
+    }
+    
+    header img {
+        height: 225px;
+    }
+
+    .header-btn {
+        font-size: 17px;
+    }
+    
+    .header-btn i {
+        margin-right: 7px;
+    }
+
+    .goals-main,
+    .phases-main,
+    .contact-main {
+        flex-direction: column;
+    }
+
+    .goals-main-nav,
+    .phases-main-nav,
+    .contact-main-nav {
+        width: 100%;
+    }
+
+    .goals-main main,
+    .phases-main main,
+    .contact-main main {
+        width: 100%;
+    }
+
+    .goals-main-nav-btn,
+    .phases-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 1.2rem;
+    }
+
+    .gallery-card-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery-card-5 {
+        width: 100%;
+    }
+
+    .gallery-card-7 {
+        width: 80%;
+        margin-right: 0px;
     }
 
 }
 
 @media only screen and (max-width: 600px) {
+    #social {
+        height: 5rem;
+    }
+    
     header {
         height: 200px;
     }
@@ -250,45 +1257,118 @@ footer img {
         height: 200px;
     }
 
-    header ul li a {
+    .header-btn {
         font-size: 15px;
     }
     
-    header ul li i {
+    .header-btn i {
         margin-right: 6px;
+    }
+
+    .gallery-card-1,
+    .gallery-card-2,
+    .gallery-card-3,
+    .gallery-card-4,
+    .gallery-card-6,
+    .gallery-card-8 {
+        width: 100%;
+    }
+
+    .ozel {
+        margin-left: 60px;
+        margin-right: 60px;
+        text-align: center;
+        line-height: 1.2;
+        font-size: 20px;
+    }
+
+    .enerji-v-sub-secs div,
+    .super-e-sub-secs div {
+        width: 80%;
     }
 
 }
 
 @media only screen and (max-width: 505px) {
     #social p {
-        letter-spacing: 0.1rem;
-        text-align: center;
+        letter-spacing: 0.08rem;
         display: flex;
         flex-direction: column;
         gap: 3px;
     }
 
-    span {
-        letter-spacing: 0.05rem;
+    p span {
+        letter-spacing: 0.045rem;
     }
 
-    section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header ul li a {
+    .header-btn {
         font-size: 13px;
     }
     
-    header ul li i {
+    .header-btn i {
         margin-right: 5px;
+    }
+
+    .uzun-haber {
+        padding: 15px;
+        width: 90%; /* Could be more or less, depending on screen size */
+        font-size: 13px;
+    }
+
+    .phases-main-nav-btn {
+        font-size: 1rem;
+    }
+
+    .goals-yazi > h5,
+    .surec > h1,
+    .kaynak > h5,
+    .enerji-v-yazi > h5,
+    .enerji-v-sub-secs div > h5,
+    .super-e-yazi > h5,
+    .super-e-sub-secs div > h5,
+    .address > h2,
+    .esco > h2,
+    .esco > h3 {
+        font-size: 20px;
+    }
+
+    .goals-yazi > p,
+    .surec > p,
+    .kaynak > p,
+    .enerji-v-yazi > p,
+    .enerji-v-sub-secs div > p,
+    .super-e-yazi > p,
+    .super-e-sub-secs div > p,
+    .address > p,
+    .esco > p {
+        font-size: 14px;
+    }
+
+    .normal,
+    .white {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .kaynak > img {
+        width: 100%;
+    }
+
+    .enerji-v-sub-secs div,
+    .super-e-sub-secs div {
+        width: 90%;
     }
 
 }
 
 @media only screen and (max-width: 400px) {
+
+    #social {
+        height: 6rem;
+    }
+
     header {
         height: 150px;
     }
@@ -297,16 +1377,82 @@ footer img {
         height: 150px;
     }
 
-    header ul li a {
+    .header-btn {
         font-size: 11px;
     }
     
-    header ul li i {
+    .header-btn i {
         margin-right: 4px;
     }
 
-    header span {
-        font-size: 1.4rem;
+    p span {
+        font-size: 0.6rem;
+    }
+
+    .haber h5 {
+        font-size: 15px;
+    }
+
+    .haber p {
+        font-size: 12px;
+    }
+
+    .goals-yazi,
+    .surec,
+    .kaynak,
+    .enerji-v-yazi,
+    .enerji-v-sub-secs div,
+    .super-e-yazi,
+    .super-e-sub-secs div,
+    .address,
+    .esco {
+        padding: 10px;
+    }
+
+    .goals-yazi > h5,
+    .surec > h1,
+    .kaynak > h1,
+    .enerji-v-yazi > h5,
+    .enerji-v-sub-secs div > h5,
+    .super-e-yazi > h5,
+    .super-e-sub-secs div > h5,
+    .address > h2,
+    .esco > h2,
+    .esco > h3 {
+        font-size: 16px;
+    }
+
+    .goals-yazi > p,
+    .surec > p,
+    .kaynak > p,
+    .enerji-v-yazi > p,
+    .enerji-v-sub-secs div > p,
+    .super-e-yazi > p,
+    .super-e-sub-secs div > p,
+    .address > p,
+    .esco > p {
+        font-size: 12px;
+    }
+
+    .ozel {
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+        line-height: 0.9;
+        font-size: 17px;
+    }
+
+    .phases-main-nav-btn {
+        font-size: 0.8rem;
+    }
+
+    .gallery-card-7 {
+        width: 100%;
+    }
+
+    .enerji-v-sub-secs div,
+    .super-e-sub-secs div {
+        width: 100%;
     }
 
 }
@@ -320,7 +1466,7 @@ footer img {
         gap: 3px;
     }
 
-    span {
+    p span {
         letter-spacing: 0.01rem;
     }
 
@@ -330,15 +1476,35 @@ footer img {
         height: 6rem;
     }
 
-    main div > p {
-        font-size: 0.8rem;
+    .icons {
+        gap: 0.8rem;
     }
 
-    main div > a:link {
-        width: 8rem;
-        height: 2rem;
-        font-size: 0.8rem;
-        align-self: center;
+    .uzun-haber {
+        padding: 12px;
+        width: 90%; /* Could be more or less, depending on screen size */
+        font-size: 11px;
+    }
+
+    .phases-main-nav-btn {
+        font-size: 0.7rem;
+    }
+
+    td {
+        font-size: 0.7rem;
+    }
+
+    td, th {
+        padding: 7px 12px;
+    }
+
+    footer {
+        font-size: 0.6rem;
+        line-height: 20px;    
+    }
+
+    footer img {
+        height: 3rem;
     }
 
 }
@@ -352,23 +1518,227 @@ footer img {
         height: 100px;
     }
 
-    header ul li a {
+    .header-btn {
         font-size: 9px;
     }
     
-    header ul li i {
+    .header-btn i {
         margin-right: 3px;
     }
 
-    main div > a:link {
-        width: 6rem;
-        height: 2.5rem;
-        font-size: 0.7rem;
+    .haber h5 {
+        font-size: 12px;
+    }
+
+    .haber p {
+        font-size: 9px;
+    }
+
+    .haber button {
+        width: 70%;
+        font-size: 10px;
+    }
+
+    .enerji-v-sub-secs div,
+    .super-e-sub-secs div {
+        align-items: center;
+    }
+
+    .enerji-v-sub-secs div .button,
+    .super-e-sub-secs div .button,
+    .esco .button {
+        width: 80%;
+        font-size: 15px;
+    }
+
+    .goals-yazi,
+    .surec,
+    .kaynak,
+    .enerji-v-yazi,
+    .enerji-v-sub-secs div,
+    .super-e-yazi,
+    .super-e-sub-secs div,
+    .address,
+    .esco {
+        padding: 7px;
+    }
+
+    .goals-yazi > h5,
+    .surec > h1,
+    .kaynak > h5,
+    .enerji-v-yazi > h5,
+    .enerji-v-sub-secs div > h5,
+    .super-e-yazi > h5,
+    .super-e-sub-secs div > h5,
+    .address > h2,
+    .esco > h2,
+    .esco > h3 {
+        font-size: 13px;
+    }
+
+    .goals-yazi > p,
+    .surec > p,
+    .kaynak > p,
+    .enerji-v-yazi > p,
+    .enerji-v-sub-secs div > p,
+    .super-e-yazi > p,
+    .super-e-sub-secs div > p,
+    .address > p,
+    .esco > p {
+        font-size: 10px;
+    }
+
+    .goals-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 1rem;
+    }
+
+    .phases-main-nav-btn {
+        font-size: 0.5rem;
+    }
+
+    .gallery-card-1 > p,
+    .gallery-card-2 > p,
+    .gallery-card-3 > p,
+    .gallery-card-4 > p,
+    .gallery-card-5 > p,
+    .gallery-card-8 > p {
+        font-size: 9px;
+    }
+
+    .ozel {
+        margin-left: 20px;
+        margin-right: 20px;
         text-align: center;
+        line-height: 0.7;
+        font-size: 15px;
+    }
+    
+}
+
+@media only screen and (max-width: 260px) {
+
+    #social {
+        height: 7.5rem;
+    }
+    
+    .header-btn {
+        font-size: 7px;
+    }
+    
+    .header-btn i {
+        margin-right: 2px;
+    }
+
+    .uzun-haber {
+        padding: 10px;
+        width: 90%; /* Could be more or less, depending on screen size */
+        font-size: 9px;
+    }
+
+    .goals-yazi,
+    .surec,
+    .kaynak,
+    .enerji-v-yazi,
+    .enerji-v-sub-secs div,
+    .super-e-yazi,
+    .super-e-sub-secs div, 
+    .address,
+    .esco {
+        padding: 3px;
+    }
+
+    .goals-yazi > h5,
+    .surec > h1,
+    .kaynak > h5,
+    .enerji-v-yazi > h5,
+    .enerji-v-sub-secs div > h5,
+    .super-e-yazi > h5,
+    .super-e-sub-secs div > h5,
+    .address > h2,
+    .esco > h2,
+    .esco > h3 {
+        font-size: 10px;
+    }
+
+    .goals-yazi > p,
+    .surec > p,
+    .kaynak > p,
+    .enerji-v-yazi > p,
+    .enerji-v-sub-secs div > p,
+    .super-e-yazi > p,
+    .super-e-sub-secs div > p,
+    .address > p,
+    .esco > p {
+        font-size: 8px;
+    }
+
+    .goals-main-nav-btn,
+    .contact-main-nav-btn {
+        font-size: 0.6rem;
+    }
+
+    .phases-main-nav-btn {
+        font-size: 0.4rem;
+    }
+
+    .ozel {
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+        line-height: 0.6;
+        font-size: 13px;
+    }
+
+    td,th {
+        font-size: 0.5rem;
+    }
+
+    td, th {
+        padding: 5px 9px;
+    }
+
+    .enerji-v-sub-secs div .button,
+    .super-e-sub-secs div .button {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .esco .button {
+        width: 100%;
+        font-size: 12px;
     }
 
     footer {
-        font-size: 0.8rem;    
+        font-size: 0.6rem;
+        line-height: 30px;    
+    }
+
+    footer img {
+        height: 3rem;
     }
     
+}
+
+@media only screen and (max-width: 200px) {
+    .phases-main-nav-btn {
+        font-size: 0.3rem;
+    }
+
+    td {
+        font-size: 0.35rem;
+    }
+
+    td, th {
+        padding: 3.5px 7px;
+    }
+
+    .enerji-v-sub-secs div .button,
+    .super-e-sub-secs div .button {
+        font-size: 10px;
+    }
+
+    .esco .button {
+        font-size: 10px;
+    }
 }
