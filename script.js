@@ -28,6 +28,7 @@ const visionSection = document.getElementById('vision');
 
 const phasesBtn = document.getElementById('phasesBtn');
 const phasesPage = document.getElementById('phasesPage');
+const EvHikayeBtn = document.getElementById('EvHikayeBtn');
 const kaynakVerBtn = document.getElementById('kaynakVerBtn');
 const enerjiVerBtn = document.getElementById('enerjiVerBtn');
 const superEscoNavBtn = document.getElementById('superEscoNavBtn');
@@ -35,10 +36,16 @@ const enerjiHikayemiz = document.getElementById('enerjiHikayemiz');
 const kaynakVerSection = document.getElementById('kaynakVer');
 const enerjiVerSection = document.getElementById('enerjiVer');
 const superEscoSection = document.getElementById('superEsco');
+const enerjiVerLink = document.getElementById('enerjiVerLink');
+const superEscoLink = document.getElementById('superEscoLink');
+const enerjiHikayeLink = document.getElementById('enerjiHikayeLink');
+const enerjiVerLink2 = document.getElementById('enerjiVerLink2');
+const enerjiHikayeLink2 = document.getElementById('enerjiHikayeLink2');
 
 /*superEscopage scripts*/
 
 const superEscoBtn = document.getElementById('superEscoBtn');
+const superEscoYararlaniciBtn = document.getElementById('superEscoYararlaniciBtn');
 
 /*contactpage scripts*/
 
@@ -50,18 +57,6 @@ const yararlaniciIletisimBtn = document.getElementById('yararlaniciIletisimBtn')
 const addressSection = document.getElementById('addressSection');
 const escoIletisimSection = document.getElementById('escoIletisimSection');
 const yararlaniciIletisimSection = document.getElementById('yararlaniciIletisimSection');
-
-/*readMoreBtn.onclick = function() {
-     modalSection.style.display = "block";
-}
-
-goalsBtn.onclick = function() {
-     awarenessSection.style.display = "none";
-}
-
-span.onclick = function() {
-     modalSection.style.display = "none";
-}*/
 
 window.onclick = function(e) {
      if (e.target == homeBtn) {
@@ -77,12 +72,13 @@ window.onclick = function(e) {
           phasesBtn.classList.remove('active');
           superEscoBtn.classList.remove('active');
           contactBtn.classList.remove('active');
+          scrollToTop();
      } else if (e.target == readMoreBtn) {
-          modalSection.style.display = "block";
+          modalSection.classList.add('active');
      } else if (e.target == modalSection) {
-          modalSection.style.display = "none";
+          modalSection.classList.remove('active');
      } else if (e.target == span) {
-          modalSection.style.display = "none";
+          modalSection.classList.remove('active');
      } else if (e.target == goalsBtn) {
           homePage.classList.add('passive');
           goalsPage.classList.remove('passive');
@@ -129,9 +125,22 @@ window.onclick = function(e) {
           goalsBtn.classList.remove('active');
           superEscoBtn.classList.remove('active');
           contactBtn.classList.remove('active');
+          EvHikayeBtn.classList.add('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
           superEscoNavBtn.classList.remove('active');
+     } else if (e.target == EvHikayeBtn) {
+          enerjiHikayemiz.classList.remove('passive');
+          kaynakVerSection.classList.add('passive');
+          enerjiVerSection.classList.add('passive');
+          superEscoSection.classList.add('passive');
+          titleSection.textContent = "Enerji Verimliliği Hikayemiz";
+          EvHikayeBtn.classList.add('active');
+          kaynakVerBtn.classList.remove('active');
+          enerjiVerBtn.classList.remove('active');
+          superEscoNavBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          phasesBtn.classList.add('active');
      } else if (e.target == kaynakVerBtn) {
           kaynakVerSection.classList.remove('passive');
           enerjiHikayemiz.classList.add('passive');
@@ -139,8 +148,11 @@ window.onclick = function(e) {
           superEscoSection.classList.add('passive');
           titleSection.textContent = "Kaynak Verimliliği Teması";
           kaynakVerBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
           superEscoNavBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          phasesBtn.classList.add('active');
      } else if (e.target == enerjiVerBtn) {
           enerjiVerSection.classList.remove('passive');
           enerjiHikayemiz.classList.add('passive');
@@ -148,8 +160,11 @@ window.onclick = function(e) {
           superEscoSection.classList.add('passive');
           titleSection.textContent = "Enerji Verimliliği Mentorlük Programı";
           enerjiVerBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           superEscoNavBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          phasesBtn.classList.add('active');
      } else if (e.target == superEscoNavBtn) {
           superEscoSection.classList.remove('passive');
           enerjiHikayemiz.classList.add('passive');
@@ -157,8 +172,68 @@ window.onclick = function(e) {
           enerjiVerSection.classList.add('passive');
           titleSection.textContent = "Super Esco İş Modeli";
           superEscoNavBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
+     } else if (e.target == enerjiVerLink) {
+          enerjiVerSection.classList.remove('passive');
+          enerjiHikayemiz.classList.add('passive');
+          kaynakVerSection.classList.add('passive');
+          superEscoSection.classList.add('passive');
+          titleSection.textContent = "Enerji Verimliliği Mentorlük Programı";
+          enerjiVerBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
+          kaynakVerBtn.classList.remove('active');
+          superEscoNavBtn.classList.remove('active');
+          scrollToTop();
+     } else if (e.target == superEscoLink) {
+          superEscoSection.classList.remove('passive');
+          enerjiVerSection.classList.add('passive');
+          enerjiHikayemiz.classList.add('passive');
+          kaynakVerSection.classList.add('passive');
+          titleSection.textContent = "Super Esco İş Modeli";
+          superEscoNavBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
+          kaynakVerBtn.classList.remove('active');
+          enerjiVerBtn.classList.remove('active');
+          scrollToTop();
+     } else if (e.target == enerjiHikayeLink) {
+          enerjiHikayemiz.classList.remove('passive');
+          kaynakVerSection.classList.add('passive');
+          enerjiVerSection.classList.add('passive');
+          superEscoSection.classList.add('passive');
+          titleSection.textContent = "Enerji Verimliliği Hikayemiz";
+          EvHikayeBtn.classList.add('active');
+          kaynakVerBtn.classList.remove('active');
+          enerjiVerBtn.classList.remove('active');
+          superEscoNavBtn.classList.remove('active');
+          scrollToTop();
+     } else if (e.target == enerjiVerLink2) {
+          enerjiVerSection.classList.remove('passive');
+          enerjiHikayemiz.classList.add('passive');
+          kaynakVerSection.classList.add('passive');
+          superEscoSection.classList.add('passive');
+          titleSection.textContent = "Enerji Verimliliği Mentorlük Programı";
+          enerjiVerBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
+          kaynakVerBtn.classList.remove('active');
+          superEscoNavBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          phasesBtn.classList.add('active');
+          scrollToTop();
+     } else if (e.target == enerjiHikayeLink2) {
+          enerjiHikayemiz.classList.remove('passive');
+          kaynakVerSection.classList.add('passive');
+          enerjiVerSection.classList.add('passive');
+          superEscoSection.classList.add('passive');
+          titleSection.textContent = "Enerji Verimliliği Hikayemiz";
+          EvHikayeBtn.classList.add('active');
+          kaynakVerBtn.classList.remove('active');
+          enerjiVerBtn.classList.remove('active');
+          superEscoNavBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          phasesBtn.classList.add('active');
+          scrollToTop();
      } else if (e.target == superEscoBtn) {
           homePage.classList.add('passive');
           goalsPage.classList.add('passive');
@@ -177,8 +252,28 @@ window.onclick = function(e) {
           phasesBtn.classList.remove('active');
           contactBtn.classList.remove('active');
           superEscoNavBtn.classList.add('active');
+          EvHikayeBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
+     } else if (e.target == superEscoYararlaniciBtn) {
+          homePage.classList.add('passive');
+          goalsPage.classList.add('passive');
+          phasesPage.classList.add('passive');
+          contactPage.classList.remove('passive');
+          yararlaniciIletisimSection.classList.remove('passive');
+          addressSection.classList.add('passive');
+          escoIletisimSection.classList.add('passive');
+          titleSection.textContent = "Yararlanıcı İletişim";
+          icon.href = "images/Logo-Amblem-siyah-beyaz.png";
+          banner.src="images/logo-S-B.jpg";
+          contactBtn.classList.add('active');
+          homeBtn.classList.remove('active');
+          goalsBtn.classList.remove('active');
+          phasesBtn.classList.remove('active');
+          superEscoBtn.classList.remove('active');
+          yararlaniciIletisimBtn.classList.add('active');
+          adresInfoBtn.classList.remove('active');
+          escoIletisimBtn.classList.remove('active');
      } else if (e.target == contactBtn) {
           homePage.classList.add('passive');
           goalsPage.classList.add('passive');
@@ -223,6 +318,20 @@ window.onclick = function(e) {
           adresInfoBtn.classList.remove('active');
           escoIletisimBtn.classList.remove('active');
      }
+}
+
+const yukariBtn = document.getElementById('yukari_buton');
+const htmlPage = document.getElementsByTagName('html')[0];
+const bodyPage = document.getElementsByTagName('body')[0];
+
+yukariBtn.addEventListener('click', function(e) {
+     e.preventDefault();
+     htmlPage.animate({scrollTop:0}, '300');
+     bodyPage.animate({scrollTop:0}, '300');
+});
+
+function scrollToTop() { 
+     yukariBtn.click();
 }
 
 homeBtn.classList.add('active');
