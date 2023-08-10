@@ -128,8 +128,8 @@ header ul li {
 /*Section Style rules*/
 
 section {
+    height: 100%;
     width: 100%;
-    height: auto;
     background-color: #f1f1f1;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -140,7 +140,7 @@ section {
 /*main Style rules for Homepage*/
 
 .home-main {
-    height: auto;
+    height:100%;
     padding: 0.5rem;
     gap: 1rem;
 }
@@ -149,43 +149,103 @@ section {
     display: none;
 }
 
-.haber {
-    height: auto;
-    display: flex;
-    flex-direction: column;
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    /*height: auto;*/
+    height: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, .15);
 }
-
-.haber > img {
+  
+.slides-container {
+    height: 100%;
     width: 100%;
-    /*height: 60%;*/
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.haber > h5 {
+.slider-wrapper:hover > .slide-arrow {
+    display: flex;
+}
+
+.slide-arrow {
+    position: absolute;
+    /*display: flex;*/
+    display: none;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 4rem;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 2rem;
+    font-size: 3rem;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 100ms;
+}
+  
+.slide-arrow:hover,
+.slide-arrow:focus {
+    opacity: 1;
+}
+  
+#slide-arrow-prev {
+    left: 0;
+    padding-left: 0.25rem;
+    border-radius: 0 2rem 2rem 0;
+}
+  
+#slide-arrow-next {
+    right: 0;
+    padding-left: 0.75rem;
+    border-radius: 2rem 0 0 2rem;
+}
+  
+.slide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex: 1 0 100%;
+    border-radius: 10px;
+}
+
+.slide > img {
+    width: 65%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.slide-metin {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slide-metin > h5 {
     color: dimgray;
     margin: 1rem;
     font-size: 20px;
 }
 
-.uzun-haber > p,
-.haber > p {
+.slide-metin > p {
     color: dimgray;
     margin: 0.5rem;
     margin-left: 1rem;
     text-align: justify;
     line-height: 1.4;
 }
-
-.uzun-haber > h4 {
-    color: dimgray;
-    margin: 1rem;
-}
-
-.haber > button {
+    
+.slide-metin > button {
     width: 9rem;
     height: 2.2rem;
     padding: 10px 20px;
@@ -199,8 +259,8 @@ section {
     outline: none;
     font-weight: bold;
 }
-
-.haber > button:hover {
+    
+.slide-metin > button:hover {
     opacity: 0.8;
 }
 
@@ -529,7 +589,17 @@ section {
 #superEscoLink,
 #enerjiHikayeLink,
 #enerjiVerLink2,
-#enerjiHikayeLink2 {
+#enerjiHikayeLink2,
+#hedeflerimizLink,
+#turkSevLink,
+#kaynakVerLink,
+#kaynakVerLink2,
+#kaynakVerLink3,
+#hedeflerimizLink2,
+#turkSevLink2,
+#superEscoLink2,
+#enerjiVerLink3,
+#turkSevLink3 {
     text-decoration: underline;
     color: blue;
 }
@@ -538,7 +608,17 @@ section {
 #superEscoLink:hover,
 #enerjiHikayeLink:hover,
 #enerjiVerLink2:hover,
-#enerjiHikayeLink2:hover {
+#enerjiHikayeLink2:hover,
+#hedeflerimizLink:hover,
+#turkSevLink:hover,
+#kaynakVerLink:hover,
+#kaynakVerLink2:hover,
+#kaynakVerLink3:hover,
+#hedeflerimizLink2:hover,
+#turkSevLink2:hover,
+#superEscoLink2:hover,
+#enerjiVerLink3:hover,
+#turkSevLink3:hover {
     text-decoration:none;
     color:crimson;
 }
@@ -631,8 +711,9 @@ td {
 }
 
 th {
-    background-color: rgb(9, 9, 9);
-    color: white;
+    background-color: white;
+    color: black;
+    text-align:left;
 }
   
 tr:nth-child(even) td {
@@ -1103,18 +1184,6 @@ iframe {
     background-color: #333;
   }
 
-  #yukari_buton:hover > ::after{
-    content: "Yukarı Çık";
-    position: fixed;
-    top: 82%;
-    left: 91.5%;
-    font-size: 12px;
-    color:dodgerblue;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-
   #yukari_buton:active {
     background-color: #555;
   }
@@ -1161,13 +1230,12 @@ footer img {
     color: crimson;
 }
 
-
 /*----HIDDEN SECTIONS----*/
 
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    z-index: 10000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -1187,6 +1255,23 @@ footer img {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.uzun-haber > p {
+    color: dimgray;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.uzun-haber > h4 {
+    color: dimgray;
+    margin: 1rem;
+}
+
+.uzun-haber .button {
+    margin-left: 15px;
 }
 
 .close {
@@ -1223,6 +1308,10 @@ footer img {
         font-size: 0.6rem;
     }
 
+    .slide-arrow {
+        display: flex;
+    }
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1252,6 +1341,32 @@ footer img {
         text-align: center;
         line-height: 1.5;
         font-size: 25px;
+    }
+
+    .slide {
+        flex-direction: column;
+    }
+
+    .slide > img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .slide-metin {
+        width: 100%;
+        display: flex;
+        height: auto;
+    }
+
+    .slide-metin > h5 {
+        font-size: 18px;
+    }
+    
+    .slide-metin > p {
+        font-size: 16px;
     }
 
 }
@@ -1405,7 +1520,8 @@ footer img {
     .super-e-sub-secs div > h5,
     .address > h2,
     .esco > h2,
-    .esco > h3 {
+    .esco > h3,
+    .slide-metin > h5 {
         font-size: 20px;
     }
 
@@ -1417,7 +1533,8 @@ footer img {
     .super-e-yazi > p,
     .super-e-sub-secs div > p,
     .address > p,
-    .esco > p {
+    .esco > p,
+    .slide-metin > p {
         font-size: 14px;
     }
 
@@ -1466,14 +1583,6 @@ footer img {
         font-size: 0.6rem;
     }
 
-    .haber h5 {
-        font-size: 15px;
-    }
-
-    .haber p {
-        font-size: 12px;
-    }
-
     .goals-yazi,
     .surec,
     .kaynak,
@@ -1482,7 +1591,8 @@ footer img {
     .super-e-yazi,
     .super-e-sub-secs div,
     .address,
-    .esco {
+    .esco,
+    .slide-metin {
         padding: 10px;
     }
 
@@ -1495,7 +1605,8 @@ footer img {
     .super-e-sub-secs div > h5,
     .address > h2,
     .esco > h2,
-    .esco > h3 {
+    .esco > h3,
+    .slide-metin > h5 {
         font-size: 16px;
     }
 
@@ -1507,7 +1618,8 @@ footer img {
     .super-e-yazi > p,
     .super-e-sub-secs div > p,
     .address > p,
-    .esco > p {
+    .esco > p,
+    .slide-metin > p {
         font-size: 12px;
     }
 
@@ -1603,19 +1715,6 @@ footer img {
         margin-right: 3px;
     }
 
-    .haber h5 {
-        font-size: 12px;
-    }
-
-    .haber p {
-        font-size: 9px;
-    }
-
-    .haber button {
-        width: 70%;
-        font-size: 10px;
-    }
-
     .enerji-v-sub-secs div,
     .super-e-sub-secs div {
         align-items: center;
@@ -1636,7 +1735,8 @@ footer img {
     .super-e-yazi,
     .super-e-sub-secs div,
     .address,
-    .esco {
+    .esco,
+    .slide-metin {
         padding: 7px;
     }
 
@@ -1649,7 +1749,8 @@ footer img {
     .super-e-sub-secs div > h5,
     .address > h2,
     .esco > h2,
-    .esco > h3 {
+    .esco > h3,
+    .slide-metin > h5 {
         font-size: 13px;
     }
 
@@ -1661,7 +1762,8 @@ footer img {
     .super-e-yazi > p,
     .super-e-sub-secs div > p,
     .address > p,
-    .esco > p {
+    .esco > p,
+    .slide-metin > p {
         font-size: 10px;
     }
 
@@ -1690,7 +1792,6 @@ footer img {
         line-height: 0.7;
         font-size: 15px;
     }
-    
 }
 
 @media only screen and (max-width: 260px) {
@@ -1721,7 +1822,8 @@ footer img {
     .super-e-yazi,
     .super-e-sub-secs div, 
     .address,
-    .esco {
+    .esco,
+    .slide-metin {
         padding: 3px;
     }
 
@@ -1734,7 +1836,8 @@ footer img {
     .super-e-sub-secs div > h5,
     .address > h2,
     .esco > h2,
-    .esco > h3 {
+    .esco > h3,
+    .slide-metin > h5 {
         font-size: 10px;
     }
 
@@ -1746,7 +1849,8 @@ footer img {
     .super-e-yazi > p,
     .super-e-sub-secs div > p,
     .address > p,
-    .esco > p {
+    .esco > p,
+    .slide-metin > p {
         font-size: 8px;
     }
 
@@ -1794,6 +1898,11 @@ footer img {
     footer img {
         height: 3rem;
     }
+
+    .slide-metin > button {
+        width: 7rem;
+        font-size: 10px;
+    }
     
 }
 
@@ -1817,5 +1926,10 @@ footer img {
 
     .esco .button {
         font-size: 10px;
+    }
+
+    .slide-metin > button {
+        width: 4rem;
+        font-size: 8px;
     }
 }
