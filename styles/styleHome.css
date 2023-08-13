@@ -14,9 +14,8 @@ body {
 /*Social bar Style rules*/
 
 #social {
-    /*background-color: rgba(0, 0, 0, 1);*/
     background-color: #0aa54b;
-    height: 3.3rem;
+    height: 4rem;
     width: 100%;
     color: white;
     position: sticky; /*stick to top when scroll down*/
@@ -1438,7 +1437,7 @@ footer img {
 
 @media only screen and (max-width: 600px) {
     #social {
-        height: 5rem;
+        height: 6rem;
     }
     
     header {
@@ -1482,6 +1481,10 @@ footer img {
 }
 
 @media only screen and (max-width: 505px) {
+    #social {
+        height: 7rem;
+    }
+
     #social p {
         letter-spacing: 0.08rem;
         display: flex;
@@ -1558,10 +1561,6 @@ footer img {
 }
 
 @media only screen and (max-width: 400px) {
-
-    #social {
-        height: 6rem;
-    }
 
     header {
         height: 150px;
@@ -1662,7 +1661,7 @@ footer img {
     #social {
         flex-direction: column;
         align-items: center;
-        height: 6rem;
+        height: 8rem;
     }
 
     .icons {
@@ -1797,7 +1796,7 @@ footer img {
 @media only screen and (max-width: 260px) {
 
     #social {
-        height: 7.5rem;
+        height: 9rem;
     }
     
     .header-btn {

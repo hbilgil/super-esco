@@ -293,10 +293,12 @@ window.onclick = function(e) {
           goalsPage.classList.remove('passive');
           phasesPage.classList.add('passive');
           visionSection.classList.remove('passive');
+          awarenessSection.classList.add('passive');
           titleSection.textContent = "Hedeflerimiz";
           icon.href = "images/Logo-Amblem-mavi-2.png";
           banner.src="images/Logo-mavi-2.png";
           visionBtn.classList.add('active');
+          awarenessBtn.classList.remove('active');
           goalsBtn.classList.add('active');
           phasesBtn.classList.remove('active');
           scrollToTop(); 
@@ -435,7 +437,7 @@ window.onclick = function(e) {
           superEscoNavBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
-          goalsBtn.classList.add('active');
+          phasesBtn.classList.add('active');
           contactBtn.classList.remove('active');
           scrollToTop();
      } else if (e.target == superEscoLink2) {
@@ -452,7 +454,7 @@ window.onclick = function(e) {
           EvHikayeBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
-          goalsBtn.classList.add('active');
+          phasesBtn.classList.add('active');
           contactBtn.classList.remove('active');
           scrollToTop();
      } else if (e.target == enerjiVerLink3) {
@@ -469,7 +471,7 @@ window.onclick = function(e) {
           EvHikayeBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.add('active');
-          goalsBtn.classList.add('active');
+          phasesBtn.classList.add('active');
           contactBtn.classList.remove('active');
           scrollToTop();
      } else if (e.target == turkSevLink3) {
@@ -486,7 +488,7 @@ window.onclick = function(e) {
           superEscoNavBtn.classList.remove('active');
           kaynakVerBtn.classList.remove('active');
           enerjiVerBtn.classList.remove('active');
-          goalsBtn.classList.add('active');
+          phasesBtn.classList.add('active');
           contactBtn.classList.remove('active');
           scrollToTop();
      }
